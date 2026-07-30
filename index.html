@@ -1,0 +1,11 @@
+<!doctype html><meta charset="utf-8"><title>Carchelle Distribution — Spec Sheets</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:760px;margin:40px auto;padding:0 20px}
+h1{font-size:1.4rem}li{margin:.2rem 0}</style>
+<h1>Carchelle Distribution — Spec Sheets</h1>
+<p>Downloadable product spec sheets (PDF).</p>
+<ul id="l"></ul>
+<script>
+fetch('manifest.json').then(r=>r.json()).then(a=>{
+  document.getElementById('l').innerHTML=a.map(f=>`<li><a href="${f}">${f.replace('.pdf','')}</a></li>`).join('');
+});
+</script>
